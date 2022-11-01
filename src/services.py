@@ -22,10 +22,7 @@ def get_new_json(product_id) -> str:
     headers = {
         'User-Agent': user_agent(),
     }
-    url = f'https://wbxcatalog-ru.wildberries.ru/nm-2-card/catalog?' \
-          f'spp=12&pricemarginCoeff=1.0&reg=1&appType=1&' \
-          f'offlineBonus=0&onlineBonus=0&emp=0&locale=ru&' \
-          f'lang=ru&curr=rub&nm={product_id}'
+    url = f'https://card.wb.ru/cards/detail?spp=0&regions=0&pricemarginCoeff=1&reg=0&appType=1&emp=0&locale=ru&lang=ru&curr=rub&couponsGeo=0&dest=0&nm={product_id}'
     r = requests.get(url, headers)
     return r.text
 
